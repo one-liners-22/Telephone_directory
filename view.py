@@ -6,7 +6,7 @@ def user_command():                                              ## Ф, кото
         print("Incorrect number! The programm will be closed.")
         return 4
 
-print(user_command())
+# print(user_command())
 
 
 from tabulate import tabulate                                       ## Таблица для вывода всех контактов
