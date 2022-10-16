@@ -2,26 +2,23 @@ import read
 import view
 
 def main_logic():
-    value = 4
+    value = 0
     data = read.get_data()
-    while value != 3:
-        # value = view.get_value()
-        value = 4
+    while value != 4:
+        value = view.user_command()
         if value == 1:
             pass
         elif value == 2:
             pass
         elif value == 3:
-            pass
+            view.print_all_contacts(data)
         elif value == 4:
-            # view.print_data(data)
-            print('hello')
-
-        
-        value -= 1
-    else:
-        # view.bay_bay()
-        print('Bay_Bay')
+            print('Bay_Bay')
+            break
+        print(value)
+    # else:
+    #     # view.bay_bay()
+    #     print('Bay_Bay')
 
 
     
