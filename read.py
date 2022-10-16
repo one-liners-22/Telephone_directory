@@ -1,6 +1,12 @@
-data = [{"id": "0000001", "secondname": "Писарев", "name": "Николай", "lastname": -1, "comment": ""}, {"id": "0000001", "secondname": "Писарев", "name": "Николай", "lastname": -1, "comment": ""}]
-# ["0000001", "Писарев", "Николай", -1, ""]["0000001", "Писарев", "Николай", -1, ""]
-
-
 def get_data ():
-    return data
+
+    dicts_from_file = []
+    name_symbol=["id","secondname", "name", "lastname", "comment"]
+    with open("bd.txt", "r",encoding="utf-8") as bd:
+        
+        for line in bd:
+            dicts_from_file.append(dict(zip(name_symbol, line.split("::"))))
+
+    return dicts_from_file
+
+    
