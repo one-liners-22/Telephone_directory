@@ -21,14 +21,12 @@ def create_contact():
     while new_contact['name'] == '':
         new_contact['name'] =  input('Input Firstname: ')
     new_contact['lastname'] = input('Input Lastname or press "enter" in case if you do not want to add it: ')
-    new_contact['phone_number'] = int(input('Input phone number without + sign: '))
-    print(type(new_contact.get('phone_number')))
-    #while new_contact.get('phone_number') == :
-        #new_contact['phone_number'] = input('Input phone number without "+" sign: ')
+    new_contact['phone_number'] =  input('Input phone number without + sign: ')
+    print(new_contact.get('phone_number').isdigit() and new_contact.get('phone_number')[0] == "+")
     new_contact['comment'] = input('Leave a comment here or press "enter" in case if you do not need it: ')
     return new_contact
 
-#print(create_contact())
+# print(create_contact())
 
 
 
@@ -36,17 +34,19 @@ def create_contact():
 
 from tabulate import tabulate                                       ## Таблица для вывода всех контактов
 
-data = [{"id": "0000001", "secondname": "Писарев", "name": "Николай", "lastname": None, "phone_number": None, "comment": "Something"}, {"id": "0000002", "secondname": "Писарев", "name": "Николай", "lastname": None, "phone_number": None, "comment": "Abra-Cadabra"}]
-
 def print_all_contacts(data):
     data_to_print = []
 
     for i in range(len(data)):
-        data_to_print.append(list(data[i].values()))
+        listik = list(data[i].values())
+        listik.pop(0)
+        data_to_print.append(listik)
+        
        
 
-    col_names = ["", "Firstname", "Lastname", "Middlename", "Phone number", "Comment"]
-
+    col_names = ["Firstname", "Lastname", "Middlename", "Phone number", "Comment"]
+    print(data_to_print)
     print(tabulate(data_to_print, headers=col_names, tablefmt="fancy_grid", showindex="never"))
 
 # #print_all_contacts(data)
+
