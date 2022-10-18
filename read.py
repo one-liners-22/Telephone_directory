@@ -1,3 +1,4 @@
+
 def get_data(src = "dataBase.txt"):
 
     dicts_from_file = []
